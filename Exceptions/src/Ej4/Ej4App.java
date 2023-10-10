@@ -9,8 +9,19 @@ public class Ej4App {
 		//Declaración de variables
 		Scanner teclado = new Scanner(System.in);
 		
-		System.out.println(Calculadora.suma(500, -4));
-		pedirNumero(teclado);
+		try {
+			System.out.println("Intentar dividir 4 / 0");
+			Calculadora.division(4, 0);
+		} catch (ArithmeticException e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println("\n\n");
+		try {
+			System.out.println("Intentar raiz cuadrada de -4");
+			Calculadora.raizCuadrada(-4);
+		} catch (ArithmeticException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static int pedirNumero(Scanner teclado) {

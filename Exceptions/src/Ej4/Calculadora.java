@@ -20,6 +20,9 @@ public class Calculadora {
 	}
 	
 	public static double raizCuadrada(double num) {
+		if(num < 0) {
+			throw new ArithmeticException("Exception: no existe la raiz cuadrada de un numero negativo.");
+		}
 		return Math.sqrt(num);
 	}
 	
@@ -27,7 +30,10 @@ public class Calculadora {
 		return Math.cbrt(num);
 	}
 	
-	public static double division(double num1, double num2) {
+	public static double division(double num1, double num2) throws ArithmeticException {
+		if(num2 == 0) {
+			throw new ArithmeticException("Exception: no se puede dividir entre 0");
+		}
 		return num1 / num2;
 	}
 }
